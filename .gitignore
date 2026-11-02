@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+Cache/
+unpack/
+__pycache__/
+*.zip
+*.dll
+*.pdb
+*.exe
+*.nupkg
+*.bak
+*.log
