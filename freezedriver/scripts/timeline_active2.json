@@ -1,0 +1,56 @@
+{
+  "settle_s": 1,
+  "steps": [
+    { "do": "cmd", "cmd": "/fdrive dumpcmds", "wait_s": 1 },
+    { "do": "cmd", "cmd": "/debug logticks 200", "wait_s": 1 },
+    { "do": "ccmd", "cmd": ".debug logticks 200", "wait_s": 30, "label": "join_settle" },
+
+    { "do": "fly", "label": "fly_fresh_20bps", "yaw": 225, "speed": 20, "dist": 2400, "y": 150 },
+    { "do": "fly", "label": "fly_fresh_60bps", "yaw": 315, "speed": 60, "dist": 5400, "y": 150 },
+    { "do": "wait", "label": "worldgen_catchup", "wait_s": 30 },
+    { "do": "cmd", "label": "tp_8000_a", "cmd": "/fdrive tp 8000 150 0", "wait_s": 45 },
+    { "do": "cmd", "label": "tp_8000_b", "cmd": "/fdrive tp 8000 150 0", "wait_s": 45 },
+    { "do": "cmd", "label": "tp_8000_c", "cmd": "/fdrive tp 0 150 8000", "wait_s": 45 },
+    { "do": "cmd", "label": "tp_home", "cmd": "/fdrive tpa 26976 150 77588", "wait_s": 30 },
+    { "do": "fly", "label": "fly_reload_20bps", "yaw": 225, "speed": 20, "dist": 1200, "y": 150 },
+    { "do": "fly", "label": "fly_reload_low_12bps", "yaw": 45, "speed": 12, "dist": 720, "y": 135 },
+    { "do": "cmd", "label": "tp_land", "cmd": "/fdrive tpa 27500 150 78100", "wait_s": 15 },
+
+    { "do": "cmd", "label": "clear_32k", "cmd": "/fdrive clear 32 32 32", "wait_s": 15 },
+    { "do": "cmd", "label": "clear_262k", "cmd": "/fdrive clear 64 64 64", "wait_s": 20 },
+    { "do": "cmd", "label": "clear_1M", "cmd": "/fdrive clear 128 64 128", "wait_s": 30 },
+    { "do": "cmd", "label": "tp_300", "cmd": "/fdrive tp 300 150 300", "wait_s": 15 },
+    { "do": "cmd", "label": "clear_2.5M", "cmd": "/fdrive clear 200 64 200", "wait_s": 40 },
+    { "do": "cmd", "label": "dig_500", "cmd": "/fdrive dig 500 10", "wait_s": 30 },
+    { "do": "cmd", "label": "drop_300", "cmd": "/fdrive drop game:stone-granite 16 300", "wait_s": 15 },
+    { "do": "cmd", "label": "fill_131k", "cmd": "/fdrive fill 64 32 64 game:rock-granite", "wait_s": 20 },
+
+    { "do": "cmd", "label": "spawn_100_drifters", "cmd": "/fdrive spawn game:drifter-normal 100 24", "wait_s": 20 },
+    { "do": "cmd", "label": "kill_spawned", "cmd": "/fdrive killspawned", "wait_s": 15 },
+
+    { "do": "hotkey", "code": "inventorydialog", "label": "gui_inventory", "wait_s": 5 },
+    { "do": "close", "label": "close_inventory", "wait_s": 2 },
+    { "do": "hotkey", "code": "characterdialog", "label": "gui_character", "wait_s": 5 },
+    { "do": "close", "label": "close_character", "wait_s": 2 },
+    { "do": "hotkey", "code": "handbook", "label": "gui_handbook_1", "wait_s": 6 },
+    { "do": "close", "label": "close_handbook_1", "wait_s": 2 },
+    { "do": "hotkey", "code": "handbook", "label": "gui_handbook_2", "wait_s": 6 },
+    { "do": "close", "label": "close_handbook_2", "wait_s": 2 },
+    { "do": "hotkey", "code": "worldmapdialog", "label": "gui_map_1", "wait_s": 6 },
+    { "do": "hotkey", "code": "worldmapdialog", "label": "close_map_1", "wait_s": 2 },
+    { "do": "hotkey", "code": "worldmapdialog", "label": "gui_map_2", "wait_s": 6 },
+    { "do": "hotkey", "code": "worldmapdialog", "label": "close_map_2", "wait_s": 2 },
+
+    { "do": "cmd", "label": "save_1", "cmd": "/autosavenow", "wait_s": 20 },
+    { "do": "cmd", "label": "save_2", "cmd": "/autosavenow", "wait_s": 20 },
+
+    { "do": "cmd", "label": "time_add_24h", "cmd": "/time add 24", "wait_s": 30 },
+    { "do": "cmd", "label": "rain_on", "cmd": "/weather setprecip 1", "wait_s": 30 },
+    { "do": "cmd", "label": "rain_off", "cmd": "/weather setprecip 0", "wait_s": 3 },
+    { "do": "cmd", "label": "stats", "cmd": "/stats", "wait_s": 1 },
+
+    { "do": "fly", "label": "fly_after_30bps", "yaw": 45, "speed": 30, "dist": 1800, "y": 150 },
+    { "do": "wait", "label": "idle_tail", "wait_s": 60 },
+    { "do": "cmd", "label": "spawn_mix_120_last", "cmd": "/fdrive spawnmix 120 32", "wait_s": 30 }
+  ]
+}

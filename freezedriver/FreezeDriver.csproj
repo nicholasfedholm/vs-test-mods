@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>FreezeDriver</AssemblyName>
+    <RootNamespace>FreezeDriver</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <Version>1.0.0</Version>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- Mod folder form: build\FreezeDriver\{FreezeDriver.dll,modinfo.json}; pass build\ to addModPath -->
+    <OutputPath>build\FreezeDriver\</OutputPath>
+    <VSDir>$(VINTAGE_STORY)</VSDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FreezeDriverMod.cs" />
+    <Reference Include="VintagestoryAPI"><HintPath>$(VSDir)\VintagestoryAPI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VintagestoryLib"><HintPath>$(VSDir)\VintagestoryLib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(VSDir)\Lib\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="modinfo.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
+
+

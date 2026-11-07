@@ -1,0 +1,1 @@
+{ "type": "code", "modid": "freezedriver", "name": "FreezeDriver", "authors": ["freeze hunt"], "description": "Scripted active-play driver. Loaded only via --addModPath during freeze hunt runs, never installed.", "version": "0.1.0", "side": "Universal", "requiredOnClient": false, "requiredOnServer": false, "dependencies": { "game": "1.22.0" } }
