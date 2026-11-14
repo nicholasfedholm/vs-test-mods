@@ -4,7 +4,7 @@
   "name": "Ore Placement Watch (TEST-ONLY)",
   "version": "1.0.0",
   "description": "TEST-ONLY diagnostic - remove after testing. Harmony-patches the base-game ore deposit generators (VSEssentials DiscDepositGenerator / ChildDepositGenerator / AlluvialDepositGenerator .GenDeposit) to log and skip ore placements that would index past a rock type's ore-block list or touch blocks outside the generating chunks, and suppresses exceptions thrown during ore placement so worldgen does not crash. Events go to Logs/oreplacementwatch-<timestamp>.log. /orewatch status (controlserver) shows counters.",
-  "authors": ["Muse (built for Nick)"],
+  "authors": ["Nick"],
   "side": "Server",
   "requiredOnClient": false,
   "requiredOnServer": true,
